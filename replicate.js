@@ -29,15 +29,14 @@ async function main(dht) {
   console.log('Resolving core: ', b4a.toString(core.key, 'hex'));
   console.time('resolved in ');
 
-  console.log(core.crypto.keyPair.toString())
 
   // Replicate on connection
   swarm.on('connection', async (conn) => {
     console.log('Got Connection, replicating ..');
     core.replicate(conn);
   });
-console.log(core.discoveryKey)
   // Announcing the Hypercore
+  console.log("Discovery Key: ",core.discoveryKey.toString())
   swarm.join(core.discoveryKey, { server: false, client: true });
 
   await swarm.flush();
