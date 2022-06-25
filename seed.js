@@ -31,6 +31,8 @@ const main = async ({ bootstrap }) => {
 
   await core.append({ foo: 'Bar' });
   await core.append({ foo: 'Zar' });
+  await core.append({ test: 'Char' });
+  await core.append({ txid: 'txid' });
 
   console.log(
     'seeding core: ',

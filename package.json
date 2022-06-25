@@ -3,23 +3,22 @@
   "source": "index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
-    "bundle": "cross-env BABEL_DISABLE_CACHE=1 browserify -t [ babelify --global ] replicate.js > bundle-replicate.js",
+    "bundle": "cross-env BABEL_DISABLE_CACHE=1 browserify -t [ babelify --global ] replicate.js > bundle-replicate.js && cp bundle-replicate.js /var/www/bsvdirect/dht-relay/",
     "setup": "npm run bundle && node setup.js"
   },
   "devDependencies": {
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "cross-env": "^7.0.3",
-    "hyperswarm": "^3.0.2",
-    "parcel": "^2.2.1"
+    "hyperswarm": "^4.0.1",
+    "parcel": "^2.6.2"
   },
   "dependencies": {
-    "@hyperswarm/dht": "^5.0.17",
-    "@hyperswarm/dht-relay": "^0.2.1",
-    "b4a": "^1.3.1",
+    "@hyperswarm/dht": "^6.0.1",
+    "@hyperswarm/dht-relay": "^0.3.0",
+    "b4a": "^1.5.3",
     "hypercore": "10.0.0-alpha.25",
     "isomorphic-ws": "^4.0.1",
-    "random-access-memory": "^4.0.0"
+    "random-access-memory": "^4.1.0"
   }
 }
